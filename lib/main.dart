@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(HelloFlutterApp());
+}
+
+class HelloFlutterApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: "Hello Flutter App",
       home: Scaffold(
           appBar: AppBar(
@@ -23,6 +30,7 @@ void main() {
                 )
               )
           )
-        )
-    );
+        );
+  }
+
 }
