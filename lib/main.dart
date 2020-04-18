@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screen/home.dart';
 
 void main() => runApp(HelloFlutterApp());
 
@@ -14,19 +15,7 @@ class HelloFlutterApp extends StatelessWidget {
               "Title in App Bar"
             )
           ),
-          body: Material(
-              color: Colors.deepPurple,
-              child: Center(
-                  child: Text(
-                    "Hello Flutter",
-                    textDirection: TextDirection.ltr,
-                    style: TextStyle(
-                      color: Colors.white, 
-                      fontSize: 36.0
-                    )
-                  )
-                )
-              )
+          body: Home()
           )
         );
   }
