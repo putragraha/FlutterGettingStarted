@@ -20,14 +20,22 @@ class Home extends StatelessWidget {
   }
 
   String getGreetMessage() {
-    num currentHour = DateTime.now().hour;
+    DateTime currentTime = DateTime.now();
+    num currentHour = currentTime.hour;
+    num currentMinute = currentTime.minute;
+    String greetMessage = "";
 
     if (currentHour < 12) {
-      return "Good Morning";
+      greetMessage = "Good Morning";
     } else if (currentHour < 18) {
-      return "Good Afternoon";
+      greetMessage = "Good Afternoon";
     } else {
-      return "Good Night";
+      greetMessage = "Good Night";
     }
+
+    String hour = currentHour < 10 ? "0" + currentHour.toString() : currentHour.toString();
+    String minute = currentMinute < 10 ? "0" + currentMinute.toString() : currentMinute.toString();
+
+    return greetMessage + "\n" + "It's " + hour + ":" + minute;
   }
 }
