@@ -8,34 +8,68 @@ class Home extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         color: Colors.deepOrangeAccent,
-        margin: EdgeInsets.all(20.0),
-        child: Row(
-          children: <Widget>[
-            Expanded(child: 
-              Text(
-                "Margherita", 
-                textDirection: TextDirection.ltr,
-                style: TextStyle(
-                  fontSize: 30.0,
-                  decoration: TextDecoration.none,
-                  fontFamily: 'Amiri',
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic
+        padding: EdgeInsets.all(40.0),
+        child: Column(
+          children: <Widget> [
+            Row(
+              children: <Widget>[
+                Expanded(child: 
+                  Text(
+                    "Marinara", 
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      decoration: TextDecoration.none,
+                      fontFamily: 'Amiri',
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic
+                    )
+                  )
+                ),
+                Expanded(child: 
+                  Text(
+                    "Tomato, Garlic", 
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      decoration: TextDecoration.none,
+                      fontFamily: 'Amiri',
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic
+                    )
+                  )
                 )
-              )
+              ]
             ),
-            Expanded(child: 
-              Text(
-                "Tomato, Mozarella, Basil", 
-                textDirection: TextDirection.ltr,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  decoration: TextDecoration.none,
-                  fontFamily: 'Amiri',
-                  fontWeight: FontWeight.normal,
-                  fontStyle: FontStyle.italic
+            Row(
+              children: <Widget>[
+                Expanded(child: 
+                  Text(
+                    "Margherita", 
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      fontSize: 30.0,
+                      decoration: TextDecoration.none,
+                      fontFamily: 'Amiri',
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic
+                    )
+                  )
+                ),
+                Expanded(child: 
+                  Text(
+                    "Tomato, Mozarella, Basil", 
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      decoration: TextDecoration.none,
+                      fontFamily: 'Amiri',
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic
+                    )
+                  )
                 )
-              )
+              ]
             )
           ]
         )
