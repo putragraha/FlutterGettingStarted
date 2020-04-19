@@ -27,6 +27,10 @@ class _HelloState extends State<HelloStateWidget> {
 
   String name = "";
 
+  final _currencies = ["Dollars", "Euro", "Pounds"];
+
+  String _selectedCurrency = "Dollars";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +50,26 @@ class _HelloState extends State<HelloStateWidget> {
                 setState(() => name = string);
               }
             ),
+            DropdownButton(
+              items: _currencies.map((String value) {
+                return DropdownMenuItem<String> (
+                  value: value,
+                  child: Text(value)
+                );
+              }).toList(), 
+              value: _selectedCurrency,
+              onChanged: (String value) => _onDropdownChanged(value)
+            ),
             Text("Hello " + name + "!")
           ]
         ),
       )
     );
+  }
+
+  _onDropdownChanged(String value) {
+    setState(() {
+      _selectedCurrency = value;
+    });
   }
 }
