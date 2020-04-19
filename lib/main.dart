@@ -1,38 +1,37 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
-void main() => runApp(HelloApp());
+void main() => runApp(FlutterApp());
 
-class HelloApp extends StatelessWidget {
+class FlutterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Hello App",
+      title: "Trip Cost Calculator",
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
-      home: HelloStateWidget()
+      home: FuelForm()
     );
   }
 }
 
-class HelloStateWidget extends StatefulWidget {
+class FuelForm extends StatefulWidget {
 
   @override
-  State<StatefulWidget> createState() => _HelloState();
+  State<StatefulWidget> createState() => _FuelFormState();
 }
 
 /// Underscore (_) ymbol here means this class access is "private"
-class _HelloState extends State<HelloStateWidget> {
+class _FuelFormState extends State<FuelForm> {
 
   String name = "";
 
-  final _currencies = ["Dollars", "Euro", "Pounds"];
-
-  String _selectedCurrency = "Dollars";
-
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.title;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Hello App"),
@@ -44,32 +43,19 @@ class _HelloState extends State<HelloStateWidget> {
           children: <Widget>[
             TextField(
               decoration: InputDecoration(
-                hintText: "Please input your name"
+                labelText: "Distance",
+                hintText: "e.g. 124",
+                labelStyle: textStyle
               ),
+              keyboardType: TextInputType.number,
               onChanged: (String string) {
                 setState(() => name = string);
               }
-            ),
-            DropdownButton(
-              items: _currencies.map((String value) {
-                return DropdownMenuItem<String> (
-                  value: value,
-                  child: Text(value)
-                );
-              }).toList(), 
-              value: _selectedCurrency,
-              onChanged: (String value) => _onDropdownChanged(value)
             ),
             Text("Hello " + name + "!")
           ]
         ),
       )
     );
-  }
-
-  _onDropdownChanged(String value) {
-    setState(() {
-      _selectedCurrency = value;
-    });
   }
 }
