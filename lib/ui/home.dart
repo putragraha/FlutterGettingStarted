@@ -9,7 +9,13 @@ class Home extends StatelessWidget {
         alignment: Alignment.center,
         color: Colors.deepOrangeAccent,
         margin: EdgeInsets.all(20.0),
-        child: Text("Pizza", textDirection: TextDirection.ltr)
+        child: Text(
+          "Pizza", 
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 80.0,
+            decoration: TextDecoration.none
+          ))
     ));
   }
 }
