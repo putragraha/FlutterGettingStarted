@@ -26,7 +26,9 @@ class FuelForm extends StatefulWidget {
 /// Underscore (_) ymbol here means this class access is "private"
 class _FuelFormState extends State<FuelForm> {
 
-  String name = "";
+  TextEditingController _textEditingController = TextEditingController();
+
+  String result = "";
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class _FuelFormState extends State<FuelForm> {
         child: Column(
           children: <Widget>[
             TextField(
+              controller: _textEditingController,
               decoration: InputDecoration(
                 labelText: "Distance",
                 hintText: "e.g. 124",
@@ -50,12 +53,19 @@ class _FuelFormState extends State<FuelForm> {
                   borderRadius: BorderRadius.circular(5.0)
                 )
               ),
-              keyboardType: TextInputType.number,
-              onChanged: (String string) {
-                setState(() => name = string);
-              }
+              keyboardType: TextInputType.number
             ),
-            Text("Hello " + name + "!")
+            RaisedButton(
+              color: Theme.of(context).primaryColorDark,
+              textColor: Theme.of(context).primaryColorLight,
+              child: Text(
+                "Submit",
+                textScaleFactor: 1.5 ,
+              ),
+              onPressed: () {
+                setState(() => result =  _textEditingController.text);
+              }),
+            Text(result)
           ]
         ),
       )
