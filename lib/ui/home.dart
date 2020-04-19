@@ -14,7 +14,10 @@ class Home extends StatelessWidget {
           textDirection: TextDirection.ltr,
           style: TextStyle(
             fontSize: 80.0,
-            decoration: TextDecoration.none
+            decoration: TextDecoration.none,
+            fontFamily: 'Amiri',
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic
           ))
     ));
   }
