@@ -45,7 +45,10 @@ class _FuelFormState extends State<FuelForm> {
               decoration: InputDecoration(
                 labelText: "Distance",
                 hintText: "e.g. 124",
-                labelStyle: textStyle
+                labelStyle: textStyle,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(5.0)
+                )
               ),
               keyboardType: TextInputType.number,
               onChanged: (String string) {
