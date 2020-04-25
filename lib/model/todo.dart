@@ -12,7 +12,7 @@ class Todo {
 
   Todo(this._title, this._priority, this._date, [this._desc]);
 
-  Todo.withId(this._id, this._title, this._priority, this._date, [this._desc])
+  Todo.withId(this._id, this._title, this._priority, this._date, [this._desc]);
 
   int get id => this._id;
 
