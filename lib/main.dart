@@ -74,6 +74,16 @@ class _MyHomePageState extends State<MyHomePage> {
             numLongPresses++;
           });
         },
+        onVerticalDragUpdate: (DragUpdateDetails value) {
+          setState(() {
+            posY += value.delta.dy;
+          });
+        },
+        onHorizontalDragUpdate: (DragUpdateDetails value) {
+          setState(() {
+            posX += value.delta.dx;
+          });
+        },
         child: Stack(
           children: <Widget>[
             Positioned(
