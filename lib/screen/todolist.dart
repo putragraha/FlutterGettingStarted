@@ -95,5 +95,9 @@ class TodoListState extends State {
       context, 
       MaterialPageRoute(builder: (context) => TodoDetail(todo))
     );
+
+    if (result) {
+      getData();
+    }
   }
 }
