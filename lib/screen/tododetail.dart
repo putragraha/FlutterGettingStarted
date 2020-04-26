@@ -37,43 +37,49 @@ class TodoDetailState extends State<TodoDetail> {
         automaticallyImplyLeading: false,
         title: Text(todo.title)
       ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            controller: titleController,
-            style: textStyle,
-            decoration: InputDecoration(
-              labelText: "Title",
-              labelStyle: textStyle,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5.0)
+      body: Padding(
+          padding: EdgeInsets.only(top: 35.0, left: 15.0, right: 15.0),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                controller: titleController,
+                style: textStyle,
+                decoration: InputDecoration(
+                  labelText: "Title",
+                  labelStyle: textStyle,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0)
+                  )
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                child: TextField(
+                  controller: descController,
+                  style: textStyle,
+                  decoration: InputDecoration(
+                    labelText: "Description",
+                    labelStyle: textStyle,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.0)
+                    )
+                  ),
+                )
+              ),
+              DropdownButton(
+                items: _priorities.map((String value) {
+                  return DropdownMenuItem(
+                    value: value,
+                    child: Text(value)
+                  );
+                }).toList(), 
+                style: textStyle,
+                value: "Low",
+                onChanged: null
               )
-            ),
-          ),
-          TextField(
-            controller: descController,
-            style: textStyle,
-            decoration: InputDecoration(
-              labelText: "Description",
-              labelStyle: textStyle,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5.0)
-              )
-            ),
-          ),
-          DropdownButton(
-            items: _priorities.map((String value) {
-              return DropdownMenuItem(
-                value: value,
-                child: Text(value)
-              );
-            }).toList(), 
-            style: textStyle,
-            value: "Low",
-            onChanged: null
+            ]
           )
-        ]
-      ),
+      )
     );
   }
 
