@@ -58,21 +58,28 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         )
       ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            left: posX,
-            top: posY,
-            child: Container(
-              width: boxSize,
-              height: boxSize,
-              decoration: BoxDecoration(
-                color: Colors.red
+      body: GestureDetector(
+        onTap: () {
+          setState(() {
+            numTaps++;
+          });
+        },
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left: posX,
+              top: posY,
+              child: Container(
+                width: boxSize,
+                height: boxSize,
+                decoration: BoxDecoration(
+                  color: Colors.red
+                )
               )
             )
-           )
-        ]
-      ),
+          ]
+        )
+      )
     );
   }
 
