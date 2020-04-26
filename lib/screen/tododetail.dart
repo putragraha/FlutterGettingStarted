@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:getting_started/model/todo.dart';
 import 'package:getting_started/util/dbhelper.dart';
@@ -106,7 +104,7 @@ class TodoDetailState extends State<TodoDetail> {
                                     );
                                   }).toList(), 
                                   style: textStyle,
-                                  value: _retrievePriority(todo.priority),
+                                  value: _priority,
                                   onChanged: (value) => _updatePriority(value)
                                 )
                               )
@@ -192,10 +190,6 @@ class TodoDetailState extends State<TodoDetail> {
     setState(() {
       _priority = value;
     });
-  }
-
-  String _retrievePriority(int value) {
-    return _priorities[value - 1];
   }
 
   void _updateTitle() {
