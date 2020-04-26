@@ -64,6 +64,16 @@ class _MyHomePageState extends State<MyHomePage> {
             numTaps++;
           });
         },
+        onDoubleTap: () {
+          setState(() {
+            numDoubleTaps++;
+          });
+        },
+        onLongPress: () {
+          setState(() {
+            numLongPresses++;
+          });
+        },
         child: Stack(
           children: <Widget>[
             Positioned(
