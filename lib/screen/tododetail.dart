@@ -74,8 +74,8 @@ class TodoDetailState extends State<TodoDetail> {
                   );
                 }).toList(), 
                 style: textStyle,
-                value: "Low",
-                onChanged: null
+                value: _priority,
+                onChanged: (String value) => value
               )
             ]
           )
