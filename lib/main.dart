@@ -24,7 +24,12 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> 
+  with SingleTickerProviderStateMixin {
+
+  Animation<double> animation;
+
+  AnimationController controller; 
 
   int numTaps = 0;
 
@@ -36,7 +41,32 @@ class _MyHomePageState extends State<MyHomePage> {
 
   double posY = 0.0;
 
-  double boxSize = 150.0;
+  double boxSize = 0.0;
+
+  double fullBoxSize = 150.0;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      duration: const Duration(milliseconds: 5000),
+      vsync: this
+    );
+
+    animation = CurvedAnimation(
+      parent: controller, 
+      curve: Curves.easeInOut
+    );
+
+    animation.addListener(() {
+      setState(() {
+        boxSize = fullBoxSize * animation.value;
+      });
+      center(context);
+    });
+
+    controller.forward();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,5 +141,11 @@ class _MyHomePageState extends State<MyHomePage> {
       posX = posX;
       posY = posY;
     });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
