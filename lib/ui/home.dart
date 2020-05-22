@@ -112,7 +112,13 @@ class OrderButton extends StatelessWidget {
   void orderPizza(BuildContext context) {
     AlertDialog alertDialog = AlertDialog(
           title: Text("Order Pizza"),
-          content: Text("Thanks for your order")
+          content: Text("Thanks for your order"),
+          actions: <Widget>[
+            FlatButton(
+              child: Text("Ok"),
+              onPressed: () => Navigator.pop(context),
+            )
+          ],
         );
 
     showDialog(
